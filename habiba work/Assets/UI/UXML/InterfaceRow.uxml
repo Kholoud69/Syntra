@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="interface-row">
+        <ui:Label class="port-icon" text="↔" />
+        <ui:VisualElement class="interface-copy">
+            <ui:Label name="interface-name" class="interface-name" />
+            <ui:Label name="interface-status" class="interface-status" />
+        </ui:VisualElement>
+        <ui:Button name="interface-toggle" class="switch">
+            <ui:VisualElement class="switch-thumb" />
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Button name="device-node" class="device-node">
+        <ui:Label name="device-glyph" class="device-glyph" text="▤" />
+        <ui:VisualElement class="device-copy">
+            <ui:Label name="device-name" class="device-name" text="Router-01" />
+            <ui:Label name="device-subtitle" class="device-subtitle" text="Core Gateway" />
+        </ui:VisualElement>
+        <ui:VisualElement class="status-dot" />
+    </ui:Button>
+</ui:UXML>

@@ -1,0 +1,205 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/NetLab.uss?fileID=7433441132597879392&amp;guid=8b70ce2cd0f5a2244af83d1c86410341&amp;type=3#NetLab"/>
+    <ui:VisualElement name="app" class="app theme-dark">
+        <ui:VisualElement class="topbar">
+            <ui:Image tint-color="rgba(255, 255, 255, 0)" source="project://database/Assets/images/WhatsApp_Image_2026-10-26_at_2.17.19_PM-removebg-preview.png?fileID=2800000&amp;guid=2d5dcda35b591c3488edfacdf86b3e0a&amp;type=3#WhatsApp_Image_2026-10-26_at_2.17.19_PM-removebg-preview" style="background-image: url(&quot;project://database/Assets/images/WhatsApp_Image_2026-10-26_at_2.17.19_PM-removebg-preview.png?fileID=2800000&amp;guid=2d5dcda35b591c3488edfacdf86b3e0a&amp;type=3#WhatsApp_Image_2026-10-26_at_2.17.19_PM-removebg-preview&quot;); background-color: rgba(61, 61, 61, 0); left: -10px; height: 62px; width: 101px; top: -10px;"/>
+            <ui:VisualElement class="brand">
+                <ui:VisualElement class="brand-copy" style="right: -30px; left: -200px; top: 0;">
+                    <ui:Label text="3D Network Simulator" class="brand-subtitle" style="left: -100px; top: 15px;"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="main-nav" style="left: -40px;">
+                <ui:Button name="nav-workspace" text="Workspace" class="nav-button"/>
+                <ui:Button name="nav-labs" text="Labs" class="nav-button"/>
+                <ui:Button name="nav-learn" text="Learn" class="nav-button"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="top-actions" style="width: 350px;">
+                <ui:Button text="Open" name="btn-open"/>
+                <ui:Button text="New" name="btn-new"/>
+                <ui:VisualElement class="save-state">
+                    <ui:Label text="✓" class="save-check"/>
+                    <ui:Button text="Save" name="btn-save" style="left: -15px;"/>
+                </ui:VisualElement>
+                <ui:Button name="settings-button" text="⚙" tooltip="Settings" class="icon-button"/>
+                <ui:Button name="theme-toggle" tooltip="Toggle color theme" class="theme-toggle">
+                    <ui:VisualElement name="theme-sun" class="theme-option">
+                        <ui:Label text="☼"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="theme-moon" class="theme-option active">
+                        <ui:Label text="☾"/>
+                    </ui:VisualElement>
+                </ui:Button>
+                <ui:Label text="HA" class="avatar"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement class="workspace">
+            <ui:VisualElement class="stage-panel">
+                <ui:VisualElement class="stage-toolbar">
+                    <ui:VisualElement class="lab-heading">
+                        <ui:Label text="Enterprise Routing Lab" class="lab-title"/>
+                        <ui:Label text="Lab 04 · Static Routing Fundamentals" class="lab-subtitle"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="toolbar-group">
+                        <ui:Button name="tool-select" text="⌖" tooltip="Select" class="tool"/>
+                        <ui:Button name="tool-connect" text="⌁" tooltip="Add connection" class="tool"/>
+                        <ui:Button name="tool-layers" text="▱" tooltip="Layers" class="tool"/>
+                        <ui:VisualElement class="tool-separator"/>
+                        <ui:Button name="simulation-button" class="simulation-button running">
+                            <ui:Label name="simulation-icon" text="Ⅱ" class="simulation-icon"/>
+                            <ui:Label name="simulation-label" text="Pause simulation"/>
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:ScrollView name="topology-viewport" mode="VerticalAndHorizontal" horizontal-scroller-visibility="AlwaysVisible" vertical-scroller-visibility="AlwaysVisible" class="topology-viewport">
+                    <ui:VisualElement name="network-content" class="device-node-layer">
+                        <ui:VisualElement name="world-render" class="world-render"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="camera-tools">
+                        <ui:Button name="zoom-in" text="+" class="camera-button"/>
+                        <ui:Button name="zoom-out" text="−" class="camera-button"/>
+                        <ui:Button name="center-view" text="⌖" class="camera-button camera-last"/>
+                    </ui:VisualElement>
+                    <ui:Label name="zoom-level" text="100%" class="zoom-level"/>
+                </ui:ScrollView>
+                <ui:VisualElement class="device-tray">
+                    <ui:VisualElement class="tray-title">
+                        <ui:Label text="◇" class="tray-icon"/>
+                        <ui:VisualElement class="tray-copy">
+                            <ui:Label text="Device Library" class="tray-name"/>
+                            <ui:Label text="Drag devices to the workspace" class="tray-subtitle"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="device-list">
+                        <ui:Button name="library-router" class="device-card">
+                            <ui:Label text="▤" class="library-glyph router-color"/>
+                            <ui:Label text="Router" class="library-label"/>
+                        </ui:Button>
+                        <ui:Button name="library-switch" class="device-card">
+                            <ui:Label text="⊞" class="library-glyph switch-color"/>
+                            <ui:Label text="Switch" class="library-label"/>
+                        </ui:Button>
+                        <ui:Button name="library-pc" class="device-card">
+                            <ui:Label text="▱" class="library-glyph pc-color"/>
+                            <ui:Label text="PC" class="library-label"/>
+                        </ui:Button>
+                        <ui:Button name="library-server" class="device-card">
+                            <ui:Label text="▥" class="library-glyph server-color"/>
+                            <ui:Label text="Server" class="library-label"/>
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="control-panel">
+                <ui:VisualElement class="device-panel">
+                    <ui:VisualElement class="panel-heading">
+                        <ui:VisualElement>
+                            <ui:Label text="SELECTED DEVICE" class="eyebrow"/>
+                            <ui:VisualElement class="device-heading">
+                                <ui:Label text="▤" class="device-heading-icon"/>
+                                <ui:Label name="selected-device-name" text="Router-01" class="selected-device-name"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:Button name="more-device-actions" text="•••" class="more-button"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="device-meta">
+                        <ui:VisualElement class="online-state">
+                            <ui:VisualElement class="status-dot"/>
+                            <ui:Label text="Online"/>
+                        </ui:VisualElement>
+                        <ui:Label name="device-model" text="ISR 4331"/>
+                        <ui:Label name="device-os" text="IOS 16.9"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="tabs">
+                        <ui:Button name="tab-config" text="Config" class="tab-button"/>
+                        <ui:Button name="tab-interfaces" text="Interfaces" class="tab-button"/>
+                        <ui:Button name="tab-routes" text="Routes" class="tab-button"/>
+                    </ui:VisualElement>
+                    <ui:ScrollView class="config-scroll" style="flex-direction: column-reverse;">
+                        <ui:VisualElement class="form-section">
+                            <ui:VisualElement class="section-title">
+                                <ui:Label text="IPv4 Configuration" class="section-heading"/>
+                                <ui:Label text="GigabitEthernet0/0" class="section-caption"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:VisualElement class="field field-first">
+                                    <ui:Label text="IP address" class="field-label"/>
+                                    <ui:TextField name="ip-address" value="10.0.1.1" class="config-field"/>
+                                </ui:VisualElement>
+                                <ui:VisualElement class="field">
+                                    <ui:Label text="Subnet mask" class="field-label"/>
+                                    <ui:TextField name="subnet-mask" value="255.255.255.0" class="config-field"/>
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field gateway-field">
+                                <ui:Label text="Default gateway" class="field-label"/>
+                                <ui:TextField name="default-gateway" value="10.0.1.254" class="config-field"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="form-section">
+                            <ui:VisualElement class="section-title">
+                                <ui:Label text="Interface status" class="section-heading"/>
+                                <ui:Label name="interface-count" text="2 active" class="section-caption"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="interface-list"/>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="form-section routes-section">
+                            <ui:VisualElement class="section-title">
+                                <ui:Label text="Static routes" class="section-heading"/>
+                                <ui:Button name="add-route" text="+  Add route" class="add-route"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="route-row" class="route-row">
+                                <ui:VisualElement class="route-copy">
+                                    <ui:Label name="route-destination" text="10.0.2.0/24" class="route-destination"/>
+                                    <ui:Label name="route-next-hop" text="via 10.0.1.2" class="route-next-hop"/>
+                                </ui:VisualElement>
+                                <ui:Label name="route-metric" text="AD 1" class="route-metric"/>
+                                <ui:Button name="delete-route" text="⌫" tooltip="Delete route" class="delete-route"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement name="empty-route" class="empty-route">
+                                <ui:Label text="No static routes configured"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement class="ai-panel">
+                    <ui:VisualElement class="ai-heading">
+                        <ui:Label text="AI" class="ai-icon"/>
+                        <ui:VisualElement class="ai-copy">
+                            <ui:Label text="SYNTRA AI" class="ai-title"/>
+                            <ui:VisualElement class="ai-status">
+                                <ui:VisualElement class="live-dot"/>
+                                <ui:Label text="Topology aware"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:Button name="ai-settings" text="⚙" class="icon-button ai-settings"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="quick-actions">
+                        <ui:Button name="diagnose-ping" text="⌘  Diagnose ping" class="quick-button"/>
+                        <ui:Button name="quiz-me" text="▣  Quiz me" class="quick-button"/>
+                    </ui:VisualElement>
+                    <ui:ScrollView name="chat-history" class="chat-history">
+                        <ui:Label text="AI analyzed your current topology" class="system-note"/>
+                        <ui:VisualElement name="guide-card" class="guide-card">
+                            <ui:Label text="RECOMMENDED NEXT STEP" class="guide-eyebrow"/>
+                            <ui:Label text="Configure the missing route" class="guide-title"/>
+                            <ui:Label text="ip route 10.0.2.0 255.255.255.0 10.0.1.2" class="guide-code"/>
+                            <ui:Button name="apply-route" text="Apply to Router-01  ›" class="guide-button"/>
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                    <ui:VisualElement class="chat-composer">
+                        <ui:TextField name="chat-input" multiline="true" label="" class="chat-input"/>
+                        <ui:Label text="Ask about this topology..." picking-mode="Ignore" class="chat-placeholder"/>
+                        <ui:VisualElement class="chat-footer">
+                            <ui:Label text="AI can inspect device configs" class="chat-hint"/>
+                            <ui:Button name="send-message" text="➤  Send" class="send-button"/>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="toast" class="toast">
+            <ui:Label text="✓" class="toast-check"/>
+            <ui:Label name="toast-message" text="Saved"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
